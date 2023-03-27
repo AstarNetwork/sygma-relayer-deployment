@@ -20,7 +20,7 @@
          "command": [
          "run",
          "--config=env",
-         "--config-url=https://cloudflare-ipfs.com/ipns/k51qzi5uqu5dhl2gkm5u2pgqjey03ggmwc23i58tgqc6aespewctzcgqbu1nph",
+         "--config-url=https://config.develop.buildwithsygma.com/share/",
          "--name=R{{ relayerId }}",
          "--blockstore=/mount/relayer{{ relayerId }}/lvldbdata"
          ],
@@ -52,7 +52,7 @@
             },
             { 
                "name": "SYG_RELAYER_MPCCONFIG_TOPOLOGYCONFIGURATION_ENCRYPTIONKEY",
-               "valueFrom": "arn:aws:ssm:{{ awsRegion }}:{{ awsAccountId }}:parameter/chainbridge/relayers/relayer-0/SYG_RELAYER_MPCCONFIG_TOPOLOGYCONFIGURATION_ENCRYPTIONKEY"
+               "valueFrom": "arn:aws:ssm:{{ awsRegion }}:{{ awsAccountId }}:parameter/chainbridge/relayers/relayer/SYG_RELAYER_MPCCONFIG_TOPOLOGYCONFIGURATION_ENCRYPTIONKEY"
             },
             {
                "name": "SYG_RELAYER_MPCCONFIG_TOPOLOGYCONFIGURATION_PATH",
@@ -60,20 +60,12 @@
             },
             {
                "name": "SYG_RELAYER_MPCCONFIG_TOPOLOGYCONFIGURATION_URL",
-               "valueFrom": "arn:aws:ssm:{{ awsRegion }}:{{ awsAccountId }}:parameter/chainbridge/relayers/relayer-0/SYG_RELAYER_MPCCONFIG_TOPOLOGYCONFIGURATION_URL"
+               "valueFrom": "arn:aws:ssm:{{ awsRegion }}:{{ awsAccountId }}:parameter/chainbridge/relayers/relayer/SYG_RELAYER_MPCCONFIG_TOPOLOGYCONFIGURATION_URL"
             },
             {
-               "name": "SYG_DOM_1",
-               "valueFrom": "arn:aws:ssm:{{ awsRegion }}:{{ awsAccountId }}:parameter/chainbridge/relayers/relayer-{{ relayerId }}/SYG_DOM_1"
-            },
-            {
-               "name": "SYG_DOM_2",
-               "valueFrom": "arn:aws:ssm:{{ awsRegion }}:{{ awsAccountId }}:parameter/chainbridge/relayers/relayer-{{ relayerId }}/SYG_DOM_2"
-            },
-            {
-               "name": "SYG_DOM_3",
-               "valueFrom": "arn:aws:ssm:{{ awsRegion }}:{{ awsAccountId }}:parameter/chainbridge/relayers/relayer-{{ relayerId }}/SYG_DOM_3"
-            }                                             
+              "name": "SYG_CHAINS",
+              "valueFrom": "arn:aws:ssm:{{ awsRegion }}:{{ awsAccountId }}:parameter/chainbridge/relayers/relayer-{{ relayerId }}/SYG_CHAINS"
+            }
          ],
          "logConfiguration": {
             "logDriver": "awsfirelens",
