@@ -75,24 +75,6 @@
             }
          ]
       },
-    {
-      "name": "log_router",
-      "image": "amazon/aws-for-fluent-bit:latest",
-      "essential": true,
-      "firelensConfiguration": {
-        "type": "fluentbit",
-        "options": {
-            "enable-ecs-log-metadata": "true"
-        }
-      },
-         "portMappings": [],
-         "command": [],
-         "cpu": 0,
-         "environment": [],
-         "mountPoints": [],
-         "user": "0",
-         "volumesFrom": []
-      }
    ],
     "executionRoleArn": "arn:aws:iam::{{ awsAccountId }}:role/{{ relayerName }}-{{ relayerId }}-ecsTaskExecutionRole",
     "networkMode": "awsvpc",
